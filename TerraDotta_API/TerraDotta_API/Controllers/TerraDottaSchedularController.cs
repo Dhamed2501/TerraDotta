@@ -561,7 +561,7 @@ namespace TerraDotta_API.Controllers
             obj.isWrongData = false;
             if (!String.IsNullOrEmpty(Gender) && !String.IsNullOrWhiteSpace(Gender))
             {
-                if(!Gender.Contains("Female")  || !Gender.Contains("Male"))
+                if(!Gender.Contains("Female")  && !Gender.Contains("Male"))
                 {
                     obj.isWrongData = true;
                     ReasonList.Add("Row: " + RowCount + " Column: " + 5 + " Gender value is incorrect because of the is not in correct format " + Gender);
@@ -574,6 +574,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Gender is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 5));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation HispanicOrLatino(string Hispanic_or_Latino, int RowCount)
@@ -584,7 +586,7 @@ namespace TerraDotta_API.Controllers
             obj.isWrongData = false;
             if (!String.IsNullOrEmpty(Hispanic_or_Latino) && !String.IsNullOrWhiteSpace(Hispanic_or_Latino))
             {
-                if (!Hispanic_or_Latino.Contains("YES") || !Hispanic_or_Latino.Contains("NO"))
+                if (!Hispanic_or_Latino.Contains("YES") && !Hispanic_or_Latino.Contains("NO"))
                 {
                     obj.isWrongData = true;
                     ReasonList.Add("Row: " + RowCount + " Column: " + 6 + " Hispanic or Latino value is incorrect because of the is not in correct YES or NO format " + Hispanic_or_Latino);
@@ -597,6 +599,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Hispanic or Latino is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 6));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation ApplicantRace(string Applicant_Race, int RowCount)
@@ -611,6 +615,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Applicant Race is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 7));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation EmailValidation(string Email, int RowCount)
@@ -635,6 +641,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Email address is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 8));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
 
@@ -650,6 +658,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("VISA is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 9));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation CityOfBirth(string Cityofbirth, int RowCount)
@@ -702,6 +712,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Country Of Birth is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 11));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation CountryOfCitizenship(string CountryofCitizenship, int RowCount)
@@ -727,6 +739,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Country Of Birth is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 12));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation MaritalStatus(string MaritalStatus, int RowCount)
@@ -764,6 +778,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Permanent Street Address is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 14));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation PermanentCity(string PermanentCity, int RowCount)
@@ -778,6 +794,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Permanent City is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 15));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation PermanentProvinceStateTerritory(string Territory,int RowCount)
@@ -792,6 +810,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Permanent Province-State-Territory is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 16));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation PermanentPostalCode(string PermanentPostalCode, int RowCount)
@@ -806,6 +826,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Permanent Postal Code is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 17));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation PermanentCountry(string PermanentCountry, int RowCount)
@@ -820,6 +842,8 @@ namespace TerraDotta_API.Controllers
                 ReasonList.Add("Permanent Country is blank");
                 wrongDataList.Add(string.Format("{0}-{1}", RowCount, 18));
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
         public static DataValidation USPhoneNumber(string USPhoneNumber, int RowCount)
@@ -832,6 +856,8 @@ namespace TerraDotta_API.Controllers
             {
 
             }
+            obj.Reason = ReasonList;
+            obj.wrongData = wrongDataList;
             return obj;
         }
     }
